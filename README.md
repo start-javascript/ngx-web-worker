@@ -75,7 +75,7 @@ export interface IWebWorkerService {
 
 # Example
 
-Check out [ngx-web-worker-example](https://github.com/haochi/angular2-web-worker-example) for a
+Check out [ngx-web-worker-example](https://github.com/nitinkrmr/ngx-web-worker-example) for a
 sample project, or see [`app/app.component.ts`](app/app.component.ts) for usage with an Angular
 application.
 
