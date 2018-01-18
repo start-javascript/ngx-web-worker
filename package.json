@@ -1,19 +1,14 @@
 {
-    "name": "angular2-web-worker",
-    "version": "0.0.6",
+    "name": "ngx-web-worker",
+    "version": "0.0.1",
     "description": "",
-    "author": "Haochi Chen",
-    "license": "ISC",
-    "keywords": [
-        "angular",
-        "angular 2",
-        "web",
-        "worker"
-    ],
+    "author": "Nitin Kumar Mishra",
+    "license": "Mit",
+    "keywords": ["angular", "web", "worker"],
     "main": "dist/web-worker.service.js",
     "repository": {
         "type": "git",
-        "url": "https://github.com/haochi/angular2-web-worker"
+        "url": "https://github.com/nitinkrmr/ngx-web-worker"
     },
     "scripts": {
         "start": "tsc && concurrently \"tsc -w\" \"lite-server\" ",

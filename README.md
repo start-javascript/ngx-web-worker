@@ -1,11 +1,12 @@
 # What is this?
 
-[Web worker](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers) service for [Angular 2](https://angular.io).
+[Web worker](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers)
+service for [Angular](https://angular.io).
 
 # Install
 
 ```shell
-npm i angular2-web-worker
+npm i ngx-web-worker
 ```
 
 # API
@@ -19,9 +20,13 @@ export interface IWebWorkerService {
 ```
 
 * `run`
+
   * `workerFunction`:
+
     * Must be a self-contained function. Cannot reference outside variables.
-    * You can import other libraries with [`importScripts`](https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope/importScripts) though
+    * You can import other libraries with
+      [`importScripts`](https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope/importScripts)
+      though
     * These are okay:
     * ```javascript
       run(input => input * input, 10);
@@ -44,6 +49,7 @@ export interface IWebWorkerService {
           }
       }
       ```
+
     * These will probably **NOT** work:
     * ```javascript
       // this is not okay because inside the context of the web worker `this` is not the same `this` as here.
@@ -54,17 +60,24 @@ export interface IWebWorkerService {
           return _.uniqueId() * input;
       }, 10);
       ```
-  * `data`: [serializable data](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Structured_clone_algorithm)
+
+  * `data`:
+    [serializable data](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Structured_clone_algorithm)
+
 * `runUrl`: Basically the same as
-  * `url`: The url you would use to create a [`Worker`](https://developer.mozilla.org/en-US/docs/Web/API/Worker/Worker) instance
+  * `url`: The url you would use to create a
+    [`Worker`](https://developer.mozilla.org/en-US/docs/Web/API/Worker/Worker) instance
   * `data`: Same as the `run` method
-* `terminate`: Calling this will [`terminate`](https://developer.mozilla.org/en-US/docs/Web/API/Worker/terminate) the web worker, if it is still running.
+* `terminate`: Calling this will
+  [`terminate`](https://developer.mozilla.org/en-US/docs/Web/API/Worker/terminate) the web worker,
+  if it is still running.
   * `promise`: The `Promise` instance returned by `run` or `runUrl`.
 
 # Example
 
-Check out [angular2-web-worker-example](https://github.com/haochi/angular2-web-worker-example) for a sample project,
-or see [`app/app.component.ts`](app/app.component.ts) for usage with an Angular 2 application.
+Check out [ngx-web-worker-example](https://github.com/haochi/angular2-web-worker-example) for a
+sample project, or see [`app/app.component.ts`](app/app.component.ts) for usage with an Angular
+application.
 
 ```
 export class AppComponent implements OnInit {

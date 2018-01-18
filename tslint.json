@@ -10,11 +10,7 @@
         "label-undefined": true,
         "max-line-length": [true, 140],
         "member-access": false,
-        "member-ordering": [
-            true,
-            "static-before-instance",
-            "variables-before-functions"
-        ],
+        "member-ordering": [true, "static-before-instance", "variables-before-functions"],
         "no-arg": true,
         "no-bitwise": true,
         "no-console": [true, "debug", "info", "time", "timeEnd", "trace"],
@@ -35,13 +31,7 @@
         "no-use-before-declare": true,
         "no-var-keyword": true,
         "object-literal-sort-keys": false,
-        "one-line": [
-            true,
-            "check-open-brace",
-            "check-catch",
-            "check-else",
-            "check-whitespace"
-        ],
+        "one-line": [true, "check-open-brace", "check-catch", "check-else", "check-whitespace"],
         "quotemark": [true, "single"],
         "radix": true,
         "semicolon": ["always"],
