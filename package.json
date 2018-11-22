@@ -28,11 +28,11 @@
         "@angular/platform-browser": "^7.1.0",
         "@angular/platform-browser-dynamic": "^7.1.0",
         "@angular/router": "^7.1.0",
-        "angular-in-memory-web-api": "~0.5.2",
-        "systemjs": "0.19.40",
-        "core-js": "^2.5.3",
-        "rxjs": "^5.5.1",
-        "zone.js": "^0.8.4"
+        "angular-in-memory-web-api": "~0.7.0",
+        "systemjs": "2.1.1",
+        "core-js": "^2.5.7",
+        "rxjs": "^6.3.3",
+        "zone.js": "^0.8.26"
     },
     "devDependencies": {
         "concurrently": "^3.1.0",
