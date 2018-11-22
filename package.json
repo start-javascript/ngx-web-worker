@@ -4,7 +4,11 @@
     "description": "",
     "author": "Nitin Kumar Mishra",
     "license": "Mit",
-    "keywords": ["angular", "web", "worker"],
+    "keywords": [
+        "angular",
+        "web",
+        "worker"
+    ],
     "main": "dist/web-worker.service.js",
     "repository": {
         "type": "git",
@@ -16,14 +20,14 @@
         "tsc:w": "tsc -w"
     },
     "dependencies": {
-        "@angular/common": "^5.2.0",
-        "@angular/compiler": "^5.2.0",
-        "@angular/core": "^5.2.0",
-        "@angular/forms": "^5.2.0",
-        "@angular/http": "^5.2.0",
-        "@angular/platform-browser": "^5.2.0",
-        "@angular/platform-browser-dynamic": "^5.2.0",
-        "@angular/router": "^5.2.0",
+        "@angular/common": "^7.1.0",
+        "@angular/compiler": "^7.1.0",
+        "@angular/core": "^7.1.0",
+        "@angular/forms": "^7.1.0",
+        "@angular/http": "^7.1.0",
+        "@angular/platform-browser": "^7.1.0",
+        "@angular/platform-browser-dynamic": "^7.1.0",
+        "@angular/router": "^7.1.0",
         "angular-in-memory-web-api": "~0.5.2",
         "systemjs": "0.19.40",
         "core-js": "^2.5.3",
