@@ -8,10 +8,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var web_worker_service_1 = require('../web-worker.service');
-var result_1 = require('./result');
-var AppComponent = (function () {
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
+var web_worker_service_1 = require("../web-worker.service");
+var result_1 = require("./result");
+var AppComponent = /** @class */ (function () {
     function AppComponent(_webWorkerService) {
         this._webWorkerService = _webWorkerService;
         this.webWorkerResults = [];
@@ -96,8 +97,8 @@ var AppComponent = (function () {
                 "\n        .spin-me-baby {\n            animation: spin 4s linear infinite;\n        }\n        @keyframes spin { \n            100% {\n                transform: rotate(360deg);\n            }\n        }\n        .zoom-me-baby {\n            animation: zoom 4s linear infinite;\n        }\n        @keyframes zoom {\n            50% {\n                font-size: 2em;\n            }\n            100% {\n                font-size: 1em;\n            }\n        }\n        "
             ],
             providers: [web_worker_service_1.WebWorkerService]
-        }), 
-        __metadata('design:paramtypes', [web_worker_service_1.WebWorkerService])
+        }),
+        __metadata("design:paramtypes", [web_worker_service_1.WebWorkerService])
     ], AppComponent);
     return AppComponent;
 }());

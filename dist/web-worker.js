@@ -1,5 +1,6 @@
 "use strict";
-var WebWorkerService = (function () {
+Object.defineProperty(exports, "__esModule", { value: true });
+var WebWorkerService = /** @class */ (function () {
     function WebWorkerService() {
         this.workerFunctionToUrlMap = new WeakMap();
         this.promiseToWorkerMap = new WeakMap();
