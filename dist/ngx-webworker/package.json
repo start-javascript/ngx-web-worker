@@ -1,19 +1,26 @@
 {
-  "name": "ngx-webworker",
+  "name": "@nitinkrmr/ngx-webworker",
   "version": "8.0.1",
+  "author": "Nitin Kumar Mishra",
+  "license": "Mit",
+  "keywords": [
+    "angular",
+    "web",
+    "worker"
+  ],
   "peerDependencies": {
     "@angular/common": "^8.0.3",
     "@angular/core": "^8.0.3"
   },
-  "main": "bundles/ngx-webworker.umd.js",
-  "module": "fesm5/ngx-webworker.js",
-  "es2015": "fesm2015/ngx-webworker.js",
-  "esm5": "esm5/ngx-webworker.js",
-  "esm2015": "esm2015/ngx-webworker.js",
-  "fesm5": "fesm5/ngx-webworker.js",
-  "fesm2015": "fesm2015/ngx-webworker.js",
-  "typings": "ngx-webworker.d.ts",
-  "metadata": "ngx-webworker.metadata.json",
+  "main": "bundles/nitinkrmr-ngx-webworker.umd.js",
+  "module": "fesm5/nitinkrmr-ngx-webworker.js",
+  "es2015": "fesm2015/nitinkrmr-ngx-webworker.js",
+  "esm5": "esm5/nitinkrmr-ngx-webworker.js",
+  "esm2015": "esm2015/nitinkrmr-ngx-webworker.js",
+  "fesm5": "fesm5/nitinkrmr-ngx-webworker.js",
+  "fesm2015": "fesm2015/nitinkrmr-ngx-webworker.js",
+  "typings": "nitinkrmr-ngx-webworker.d.ts",
+  "metadata": "nitinkrmr-ngx-webworker.metadata.json",
   "sideEffects": false,
   "dependencies": {
     "tslib": "^1.9.0"

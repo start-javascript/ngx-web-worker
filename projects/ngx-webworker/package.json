@@ -1,6 +1,13 @@
 {
-  "name": "ngx-webworker",
+  "name": "@nitinkrmr/ngx-webworker",
   "version": "8.0.1",
+  "author": "Nitin Kumar Mishra",
+  "license": "Mit",
+  "keywords": [
+    "angular",
+    "web",
+    "worker"
+  ],
   "peerDependencies": {
     "@angular/common": "^8.0.3",
     "@angular/core": "^8.0.3"

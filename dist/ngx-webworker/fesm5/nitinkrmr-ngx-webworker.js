@@ -190,4 +190,4 @@ var WebworkerService = /** @class */ (function () {
 }());
 
 export { WebworkerService };
-//# sourceMappingURL=ngx-webworker.js.map
+//# sourceMappingURL=nitinkrmr-ngx-webworker.js.map

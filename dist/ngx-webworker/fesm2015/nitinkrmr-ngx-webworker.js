@@ -143,4 +143,4 @@ WebworkerService.decorators = [
 ];
 
 export { WebworkerService };
-//# sourceMappingURL=ngx-webworker.js.map
+//# sourceMappingURL=nitinkrmr-ngx-webworker.js.map

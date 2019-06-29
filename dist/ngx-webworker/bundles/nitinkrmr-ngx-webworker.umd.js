@@ -1,7 +1,7 @@
 (function (global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core')) :
-    typeof define === 'function' && define.amd ? define('ngx-webworker', ['exports', '@angular/core'], factory) :
-    (global = global || self, factory(global['ngx-webworker'] = {}, global.ng.core));
+    typeof define === 'function' && define.amd ? define('@nitinkrmr/ngx-webworker', ['exports', '@angular/core'], factory) :
+    (global = global || self, factory((global.nitinkrmr = global.nitinkrmr || {}, global.nitinkrmr['ngx-webworker'] = {}), global.ng.core));
 }(this, function (exports, core) { 'use strict';
 
     /**
@@ -198,4 +198,4 @@
     Object.defineProperty(exports, '__esModule', { value: true });
 
 }));
-//# sourceMappingURL=ngx-webworker.umd.js.map
+//# sourceMappingURL=nitinkrmr-ngx-webworker.umd.js.map
