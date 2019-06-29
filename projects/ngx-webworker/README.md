@@ -3,7 +3,7 @@
 [Web worker](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers)
 service for [Angular](https://angular.io).
 
-## [Demo](http://rawgit.com/start-javascript/ngx-web-worker/master/dist/web-wroker-tester)
+## [Demo](start-javascript.github.io/ngx-web-worker)
 
 # Install
 
