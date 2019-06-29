@@ -1,24 +1,99 @@
-# NgxWebworker
+# What is this?
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.3.
+[Web worker](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers)
+service for [Angular](https://angular.io).
 
-## Code scaffolding
+## [Demo](http://rawgit.com/start-javascript/ngx-web-worker/master/dist/web-wroker-tester)
 
-Run `ng generate component component-name --project ngx-webworker` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ngx-webworker`.
-> Note: Don't forget to add `--project ngx-webworker` or else it will be added to the default project in your `angular.json` file. 
+# Install
 
-## Build
+```shell
+npm i ngx-web-worker
+```
 
-Run `ng build ngx-webworker` to build the project. The build artifacts will be stored in the `dist/` directory.
+# API
 
-## Publishing
+```javascript
+export interface IWebWorkerService {
+  run<T>(workerFunction: (any) => T, data?: any): Promise<T>;
+  runUrl(url: string, data?: any): Promise<any>;
+  terminate<T>(promise: Promise<T>): Promise<T>;
+}
+```
 
-After building your library with `ng build ngx-webworker`, go to the dist folder `cd dist/ngx-webworker` and run `npm publish`.
+- `run`
 
-## Running unit tests
+  - `workerFunction`:
 
-Run `ng test ngx-webworker` to execute the unit tests via [Karma](https://karma-runner.github.io).
+    - Must be a self-contained function. Cannot reference outside variables.
+    - You can import other libraries with
+      [`importScripts`](https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope/importScripts)
+      though
+    - These are okay:
+    - ```javascript
+      run(input => input * input, 10);
 
-## Further help
+      run(input => {
+          const square = num => num * num;
+          return square(input);
+      }, 10);
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+      const someFunction = (input) => input * input);
+      run(someFunction, 10);
+
+      class Runner {
+          private webWorkerService = new WebWorkerService();
+          constructor() {
+              this.webWorkerService.run(this.someFunction, 10);
+          }
+          someFunction() {
+              return input * input;
+          }
+      }
+      ```
+
+    - These will probably **NOT** work:
+    - ```javascript
+      // this is not okay because inside the context of the web worker `this` is not the same `this` as here.
+      run(input => this.square(input), 10);
+
+      // this is not okay because `_` doesn't exist in the web worker context (assuming tht `_` is available here to begin with)
+      run(input => {
+        return _.uniqueId() * input;
+      }, 10);
+      ```
+
+  - `data`:
+    [serializable data](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Structured_clone_algorithm)
+
+- `runUrl`: Basically the same as
+  - `url`: The url you would use to create a
+    [`Worker`](https://developer.mozilla.org/en-US/docs/Web/API/Worker/Worker) instance
+  - `data`: Same as the `run` method
+- `terminate`: Calling this will
+  [`terminate`](https://developer.mozilla.org/en-US/docs/Web/API/Worker/terminate) the web worker,
+  if it is still running.
+  - `promise`: The `Promise` instance returned by `run` or `runUrl`.
+
+# Example
+
+Check out [ngx-web-worker-example](https://github.com/nitinkrmr/ngx-web-worker-example) for a
+sample project, or see [`app/app.component.ts`](app/app.component.ts) for usage with an Angular
+application.
+
+```
+export class AppComponent implements OnInit {
+    constructor(private _webWorkerService: WebWorkerService) {
+    }
+
+    ngOnInit() {
+        const input = 100;
+        const promise = this._webWorkerService.run(this.someCPUHeavyFunction, input);
+        promise.then(result => console.log(result));
+    }
+
+    someCPUHeavyFunction (input) {
+        return input * 10;
+    }
+}
+```
