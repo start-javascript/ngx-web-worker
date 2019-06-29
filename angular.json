@@ -144,5 +144,5 @@
       }
     }
   },
-  "defaultProject": "web-worker"
+  "defaultProject": "ngx-webworker-tester"
 }

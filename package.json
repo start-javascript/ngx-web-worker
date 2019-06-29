@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build:app": "ng build web-webworker-tester",
+    "build:app": "ng build web-wroker-tester --base-href ngx-web-worker",
     "build:lib": "ng build ngx-webworker",
     "test": "ng test",
     "lint": "ng lint",
