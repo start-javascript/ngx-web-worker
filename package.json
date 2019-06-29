@@ -1,56 +1,51 @@
 {
-    "name": "ngx-web-worker",
-    "version": "2.0.0",
-    "description": "",
-    "author": "Nitin Kumar Mishra",
-    "license": "Mit",
-    "keywords": [
-        "angular",
-        "web",
-        "worker"
-    ],
-    "main": "dist/web-worker.service.js",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/nitinkrmr/ngx-web-worker"
-    },
-    "scripts": {
-        "start": "tsc && concurrently \"tsc -w\" \"lite-server\" ",
-        "tsc": "tsc",
-        "tsc:w": "tsc -w"
-    },
-    "dependencies": {
-        "@angular/common": "^8.0.3",
-        "@angular/compiler": "^8.0.3",
-        "@angular/core": "^8.0.3",
-        "@angular/forms": "^8.0.3",
-        "@angular/http": "^7.1.0",
-        "@angular/platform-browser": "^8.0.3",
-        "@angular/platform-browser-dynamic": "^8.0.3",
-        "@angular/router": "^8.0.3",
-        "angular-in-memory-web-api": "~0.8.0",
-        "systemjs": "3.1.6",
-        "core-js": "^3.1.4",
-        "rxjs": "^6.5.2",
-        "zone.js": "^0.9.1"
-    },
-    "devDependencies": {
-        "concurrently": "^4.1.1",
-        "lite-server": "^2.5.3",
-        "typescript": "~3.5.2",
-        "canonical-path": "1.0.0",
-        "http-server": "^0.11.1",
-        "tslint": "^5.18.0",
-        "lodash": "^4.17.11",
-        "jasmine-core": "~3.4.0",
-        "karma": "^4.1.0",
-        "karma-chrome-launcher": "^2.2.0",
-        "karma-cli": "^2.0.0",
-        "karma-jasmine": "^2.0.1",
-        "karma-jasmine-html-reporter": "^1.4.2",
-        "protractor": "~5.4.2",
-        "rimraf": "^2.6.3",
-        "@types/node": "^12.0.10",
-        "@types/jasmine": "^3.3.13"
-    }
+  "name": "ngx-webworker",
+  "version": "8.0.1",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build:app": "ng build web-webworker-tester",
+    "build:lib": "ng build ngx-webworker",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "~8.0.3",
+    "@angular/common": "~8.0.3",
+    "@angular/compiler": "~8.0.3",
+    "@angular/core": "~8.0.3",
+    "@angular/forms": "~8.0.3",
+    "@angular/platform-browser": "~8.0.3",
+    "@angular/platform-browser-dynamic": "~8.0.3",
+    "@angular/router": "~8.0.3",
+    "rxjs": "~6.4.0",
+    "tslib": "^1.9.0",
+    "zone.js": "~0.9.1"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "~0.800.6",
+    "@angular-devkit/build-ng-packagr": "~0.800.6",
+    "@angular/cli": "~8.0.6",
+    "@angular/compiler-cli": "~8.0.3",
+    "@angular/language-service": "~8.0.3",
+    "@types/node": "~8.9.4",
+    "@types/jasmine": "~3.3.8",
+    "@types/jasminewd2": "~2.0.3",
+    "codelyzer": "^5.0.0",
+    "jasmine-core": "~3.4.0",
+    "jasmine-spec-reporter": "~4.2.1",
+    "karma": "~4.1.0",
+    "karma-chrome-launcher": "~2.2.0",
+    "karma-coverage-istanbul-reporter": "~2.0.1",
+    "karma-jasmine": "~2.0.1",
+    "karma-jasmine-html-reporter": "^1.4.0",
+    "ng-packagr": "^5.1.0",
+    "protractor": "~5.4.0",
+    "ts-node": "~7.0.0",
+    "tsickle": "^0.35.0",
+    "tslint": "~5.15.0",
+    "typescript": "~3.4.3"
+  }
 }

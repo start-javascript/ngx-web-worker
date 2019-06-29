@@ -1,0 +1,148 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "web-wroker-tester": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/web-wroker-tester",
+      "sourceRoot": "projects/web-wroker-tester/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/web-wroker-tester",
+            "index": "projects/web-wroker-tester/src/index.html",
+            "main": "projects/web-wroker-tester/src/main.ts",
+            "polyfills": "projects/web-wroker-tester/src/polyfills.ts",
+            "tsConfig": "projects/web-wroker-tester/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "projects/web-wroker-tester/src/favicon.ico",
+              "projects/web-wroker-tester/src/assets"
+            ],
+            "styles": ["projects/web-wroker-tester/src/styles.css"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/web-wroker-tester/src/environments/environment.ts",
+                  "with": "projects/web-wroker-tester/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "web-wroker-tester:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "web-wroker-tester:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "web-wroker-tester:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/web-wroker-tester/src/test.ts",
+            "polyfills": "projects/web-wroker-tester/src/polyfills.ts",
+            "tsConfig": "projects/web-wroker-tester/tsconfig.spec.json",
+            "karmaConfig": "projects/web-wroker-tester/karma.conf.js",
+            "assets": [
+              "projects/web-wroker-tester/src/favicon.ico",
+              "projects/web-wroker-tester/src/assets"
+            ],
+            "styles": ["projects/web-wroker-tester/src/styles.css"],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/web-wroker-tester/tsconfig.app.json",
+              "projects/web-wroker-tester/tsconfig.spec.json",
+              "projects/web-wroker-tester/e2e/tsconfig.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/web-wroker-tester/e2e/protractor.conf.js",
+            "devServerTarget": "web-wroker-tester:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "web-wroker-tester:serve:production"
+            }
+          }
+        }
+      }
+    },
+    "ngx-webworker": {
+      "projectType": "library",
+      "root": "projects/ngx-webworker",
+      "sourceRoot": "projects/ngx-webworker/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ngx-webworker/tsconfig.lib.json",
+            "project": "projects/ngx-webworker/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-webworker/src/test.ts",
+            "tsConfig": "projects/ngx-webworker/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-webworker/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ngx-webworker/tsconfig.lib.json",
+              "projects/ngx-webworker/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "web-worker"
+}

@@ -1,0 +1,64 @@
+.spin-me-baby {
+  animation: spin 4s linear infinite;
+}
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.zoom-me-baby {
+  animation: zoom 4s linear infinite;
+}
+@keyframes zoom {
+  50% {
+    font-size: 2em;
+  }
+  100% {
+    font-size: 1em;
+  }
+}
+:host {
+  padding: 20px;
+  display: block;
+}
+:host input:focus,
+:host button:focus {
+  outline: none;
+  border: 1px solid #3e8ef7;
+}
+
+.mt-0 {
+  margin-top: 0;
+}
+.mt-10 {
+  margin-top: 10px;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+input {
+  padding: 10px 20px;
+  border-radius: 4px;
+  border: none;
+  background: #eeeeee;
+  margin: 0 20px;
+  font-size: 14px;
+  border: 1px solid transparent;
+}
+
+button {
+  padding: 8px 20px;
+  font-size: 14px;
+  margin-right: 20px;
+  background: #3e8ef7;
+  border: 1px solid #3e8ef7;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #ffffff;
+}
+button:hover,
+button:focus {
+  background: #0966df;
+}

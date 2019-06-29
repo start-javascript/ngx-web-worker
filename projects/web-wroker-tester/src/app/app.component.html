@@ -1,0 +1,47 @@
+<h2 class="heading mt-0">calculating fibonacci using web worker</h2>
+<form (ngSubmit)="startWebWorkerCalculation()">
+  <div>
+    <span>calculate fib(n) from</span>
+    <input type="number" [(ngModel)]="webWorkerStart" name="webWorkerStart" />
+    <span>to:</span>
+    <input type="number" [(ngModel)]="webWorkerEnd" name="webWorkerEnd" />
+  </div>
+  <button class="mt-20" type="submit">Start</button>
+  <button class="mt-20" type="button" (click)="stopWebWorkerCalculation()">
+    Stop
+  </button>
+</form>
+<div>
+  <p *ngFor="let result of webWorkerResults">
+    fib({{ result.number }}) =
+    <span *ngIf="result.loading" class="spin-me-baby">... calculating ...</span>
+    <span *ngIf="!result.loading">{{ result.result }}</span>
+  </p>
+</div>
+
+<h2>calculating fibonacci using main UI thread</h2>
+<form (ngSubmit)="startSynchronousCalculation()">
+  <div>
+    <span>calculate fib(n) from</span>
+    <input
+      type="number"
+      [(ngModel)]="synchronousStart"
+      name="synchronousStart"
+    />
+    <span>to:</span>
+    <input type="number" [(ngModel)]="synchronousEnd" name="synchronousEnd" />
+  </div>
+  <button type="submit" class="mt-20">
+    Start (might lock up your browser for large numbers)
+  </button>
+</form>
+<div>
+  <div style="height: 50px">
+    <span *ngIf="synchronousDuration" [class.zoom-me-baby]="true">
+      took {{ synchronousDuration }} seconds
+    </span>
+  </div>
+  <p *ngFor="let result of synchronousResults">
+    fib({{ result.number }}) = {{ result.result }}
+  </p>
+</div>
