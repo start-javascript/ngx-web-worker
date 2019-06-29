@@ -6,6 +6,7 @@
     "start": "ng serve",
     "build:app": "ng build web-wroker-tester --base-href ngx-web-worker",
     "build:lib": "ng build ngx-webworker",
+    "publish": "git subtree push --prefix dist/web-wroker-tester origin gh-pages",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
